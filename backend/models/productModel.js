@@ -17,6 +17,10 @@ const ProductSchema = mongoose.Schema({
     type: Number,
     required: [true, "Count in stock is required"],
   },
+  imageUrl: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Product", ProductSchema);
