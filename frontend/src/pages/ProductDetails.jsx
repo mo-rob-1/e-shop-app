@@ -1,28 +1,32 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 // Actions
 import { getProductsDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
 
-function ProductDetails({ history }) {
+function ProductDetails() {
   const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
 
   const { id } = useParams();
 
+  const navigate = useNavigate();
+
   const productDetails = useSelector((state) => state.getProductDetails);
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
-    dispatch(getProductsDetails(id));
-  }, [dispatch, id]);
+    if (product && id !== product._id) {
+      dispatch(getProductsDetails(id));
+    }
+  }, [dispatch, id, product]);
 
   const addToCartHandler = () => {
     dispatch(addToCart(product._id, qty));
-    history.push(`/cart`);
+    navigate(`/cart`);
   };
 
   return (
