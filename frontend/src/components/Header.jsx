@@ -33,7 +33,6 @@ function Header() {
       <ul>
         {user ? (
           <>
-            {/* // show name of user */}
             <li>Hi {user.name}</li>
 
             <li>
