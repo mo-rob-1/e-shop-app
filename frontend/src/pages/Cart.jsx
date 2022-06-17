@@ -55,7 +55,7 @@ function Cart() {
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button>Proceed To Checkout</button>
+            <Link to="/checkout">Proceed To Checkout</Link>
           </div>
         </div>
       </div>
