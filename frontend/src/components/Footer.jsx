@@ -1,9 +1,9 @@
-import React from "react";
-
 function Footer() {
   return (
     <div>
-      <h1>Footer</h1>
+      <small>
+        Coded by <a href="https://mocodes.co.uk/">Mo.</a>
+      </small>
     </div>
   );
 }
