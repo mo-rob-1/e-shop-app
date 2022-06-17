@@ -4,6 +4,9 @@ const dotenv = require("dotenv").config();
 const colors = require("colors");
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
+const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const port = process.env.PORT || 8000;
 
@@ -15,8 +18,38 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(cors());
+
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/products", require("./routes/productRoutes"));
+
+// Stripe
+app.post("/payment", cors(), async (req, res) => {
+  let { amount, id } = req.body;
+  try {
+    const payment = await stripe.paymentIntents.create({
+      amount,
+      currency: "GBP",
+      description: "eShop",
+      payment_method: id,
+      confirm: true,
+    });
+    console.log("Payment", payment);
+    res.json({
+      message: "Payment successful",
+      success: true,
+    });
+  } catch (error) {
+    console.log("Error", error);
+    res.json({
+      message: "Payment failed",
+      success: false,
+    });
+  }
+});
 
 // Serve Frontend
 if (process.env.NODE_ENV === "production") {
