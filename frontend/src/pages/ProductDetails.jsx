@@ -68,11 +68,11 @@ function ProductDetails() {
                   ))}
                 </select>
               </p>
-              <p>
+              <div>
                 <button type="button" onClick={addToCartHandler}>
                   Add To Cart
                 </button>
-              </p>
+              </div>
             </div>
           </div>
         </>
