@@ -10,23 +10,26 @@ import Checkout from "./pages/Checkout";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PrivateRoute from "./components/PrivateRoute";
+import "./styles/custom.css";
 
 function App() {
   return (
     <>
       <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<PrivateRoute />}>
-            <Route path="/checkout" element={<Checkout />} />
-          </Route>
-        </Routes>
-        <Footer />
+        <div className="container">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<PrivateRoute />}>
+              <Route path="/checkout" element={<Checkout />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </div>
       </Router>
       <ToastContainer />
     </>
