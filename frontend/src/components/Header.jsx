@@ -24,18 +24,18 @@ function Header() {
   };
 
   return (
-    <header>
+    <header className="flex justify-between items-center pt-10 pb-10">
       <div>
         <div>
           <Link to="/">e-Shop</Link>
         </div>
       </div>
-      <ul>
+      <ul className="flex justify-between items-center">
         {user ? (
           <>
-            <li>Hi {user.name}</li>
+            <li className="mr-5">Hi {user.name}</li>
 
-            <li>
+            <li className="mr-5">
               <Link to="/cart">
                 <i className="fas fa-shopping-cart"></i>
                 <span>
@@ -50,7 +50,7 @@ function Header() {
         ) : (
           <>
             {" "}
-            <li>
+            <li className="mr-5">
               <Link to="/login">Login</Link>
             </li>
             <li>

@@ -2,17 +2,22 @@ import { Link } from "react-router-dom";
 
 function ProductItem({ imageUrl, description, price, name, productId }) {
   return (
-    <div>
-      <img src={imageUrl} alt={name} height="300px" />
+    <div className="shadow-md rounded-bl-xl rounded-br-xl">
+      <img src={imageUrl} alt={name} height="300px" className="rounded-tr-xl rounded-tl-xl w-full h-80 object-cover" />
 
-      <div>
-        <p>{name}</p>
+      <div className="pl-6 pr-6 pt-8 pb-8">
+        <h2 className="font-bold text-lg mb-4">{name}</h2>
 
-        <p>{description.substring(0, 100)}...</p>
+        <p className="mb-3">{description.substring(0, 100)}...</p>
 
-        <p>${price}</p>
+        <p className="mb-3 font-bold text-2xl">${price}</p>
 
-        <Link to={`/product/${productId}`}>View</Link>
+        <Link
+          className="bg-slate-800 text-white font-bold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
+          to={`/product/${productId}`}
+        >
+          View
+        </Link>
       </div>
     </div>
   );

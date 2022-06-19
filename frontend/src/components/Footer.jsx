@@ -1,8 +1,11 @@
 function Footer() {
   return (
-    <div>
+    <div className="text-center mt-10 mb-4">
       <small>
-        Coded by <a href="https://mocodes.co.uk/">Mo.</a>
+        Coded by{" "}
+        <a href="https://mocodes.co.uk/" className="underline font-bold">
+          Mo.
+        </a>
       </small>
     </div>
   );

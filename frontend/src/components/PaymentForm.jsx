@@ -38,16 +38,18 @@ function PaymentForm() {
     <>
       {!success ? (
         <form onSubmit={handleSubmit}>
-          <fieldset className="FormGroup">
-            <div className="FormRow">
+          <fieldset>
+            <div className="mb-5">
               <CardElement />
             </div>
           </fieldset>
-          <button>Pay</button>
+          <button className="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md">
+            Pay
+          </button>
         </form>
       ) : (
         <div>
-          <h2>Payment Successful.</h2>
+          <h2 className="text-3xl font-bold">Payment Successful.</h2>
         </div>
       )}
     </>
