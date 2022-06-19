@@ -29,33 +29,43 @@ function Cart() {
   };
   return (
     <>
-      <div>
+      <div className="checkout-container">
         <div>
-          <h2>Shopping Cart</h2>
+          <h2 className="mb-10 font-bold text-2xl">Shopping Cart</h2>
 
-          {cartItems.length === 0 ? (
-            <div>
-              Your Cart Is Empty <Link to="/">Go Back</Link>
-            </div>
-          ) : (
-            cartItems.map((item) => (
-              <CartItem
-                key={item.product}
-                item={item}
-                qtyChangeHandler={qtyChangeHandler}
-                removeHandler={removeFromCartHandler}
-              />
-            ))
-          )}
+          <div className="grid gap-5">
+            {cartItems.length === 0 ? (
+              <h2 className="text-xl font-bold">
+                Your Cart Is Empty{" "}
+                <Link className="underline" to="/">
+                  Go Back
+                </Link>
+              </h2>
+            ) : (
+              cartItems.map((item) => (
+                <CartItem
+                  key={item.product}
+                  item={item}
+                  qtyChangeHandler={qtyChangeHandler}
+                  removeHandler={removeFromCartHandler}
+                />
+              ))
+            )}
+          </div>
         </div>
 
         <div>
-          <div>
-            <p>Subtotal ({getCartCount()}) items</p>
-            <p>${getCartSubTotal()}</p>
-          </div>
-          <div>
-            <Link to="/checkout">Proceed To Checkout</Link>
+          <div className="shadow p-6 lg:p-10 rounded-xl mt-8">
+            <p className="font-semibold mb-3">Subtotal ({getCartCount()}) items</p>
+            <p className="font-bold text-2xl mb-3">£{getCartSubTotal()}</p>
+            <div>
+              <Link
+                to="/checkout"
+                className="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
+              >
+                Proceed To Checkout
+              </Link>
+            </div>
           </div>
         </div>
       </div>

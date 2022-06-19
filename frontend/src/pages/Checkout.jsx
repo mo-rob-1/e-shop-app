@@ -15,60 +15,85 @@ function Checkout() {
 
   return (
     <>
-      <h1>Checkout</h1>
+      <h1 className="md:mb-10 font-bold text-2xl">Checkout</h1>
 
-      <div>
-        <h2>Your Order</h2>
-        {cartItems.map((item) => (
-          <div key={item.product}>
-            <div>
-              <img src={item.imageUrl} alt={item.name} />
+      <div className="checkout-container">
+        <div>
+          <h2 className="font-bold text-lg">Your Order</h2>
+          <div className="grid gap-6 mt-8">
+            {cartItems.map((item) => (
+              <div
+                key={item.product}
+                className="shadow rounded-bl-xl rounded-br-xl rounded-tr-xl product-item-container items-center"
+              >
+                <div className="md:h-full">
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name}
+                    className="rounded-tl-xl rounded-tr-xl w-full md:h-40 md:rounded-tr-none md:rounded-bl-xl object-cover"
+                  />
+                </div>
+
+                <div className="pl-4 pr-4 pt-6 pb-6">
+                  <h3 className="font-bold mb-2">{item.name}</h3>
+                  <p className="font-bold mb-2">£{item.price}</p>
+                  <p>
+                    <span className="font-bold">Quantity:</span> {item.qty}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <form className="shadow rounded-2xl p-6 mt-8 mb-8">
+            <h2 className="font-bold mb-6 mt-2 text-lg">Shipping Address</h2>
+            <div className="mb-4">
+              <label className="font-semibold">Name:</label>
+              <br></br>
+              <input type="text" name="name" disabled={disabled} className="border w-full p-2 mt-1" />
             </div>
-            <p>{item.name}</p>
-            <p>£{item.price}</p>
-            <p>{item.qty}</p>
-          </div>
-        ))}
-      </div>
+            <div className="mb-4">
+              <label className="font-semibold">Address:</label> <br></br>
+              <input type="text" name="address" disabled={disabled} className="border w-full p-2 mt-1" />
+            </div>
+            <div className="mb-4">
+              <label className="font-semibold">City:</label> <br></br>
+              <input type="text" name="city" disabled={disabled} className="border w-full p-2 mt-1" />
+            </div>
+            <div className="mb-4">
+              <label className="font-semibold">Post Code:</label> <br></br>
+              <input type="text" name="post" disabled={disabled} className="border w-full p-2 mt-1" />
+            </div>
+            <div className="mb-5">
+              <label className="font-semibold">Country:</label> <br></br>
+              <input type="text" name="country" disabled={disabled} className="border w-full p-2 mt-1" />
+            </div>
+            {disabled ? (
+              <button
+                type="submit"
+                onClick={saveAddress}
+                className="bg-black text-white font-bold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
+              >
+                Edit
+              </button>
+            ) : (
+              <button
+                type="submit"
+                onClick={saveAddress}
+                className="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
+              >
+                Save
+              </button>
+            )}
+          </form>
 
-      <div>
-        <h2>Shipping Address</h2>
-        <form>
-          <div>
-            <label>Name:</label>
-            <input type="text" name="name" placeholder="Name" disabled={disabled} />
+          <div className="shadow rounded-2xl p-6">
+            <h2 className="font-bold mb-6 mt-2 text-lg">Make Payment</h2>
+            <StripeContainer />
           </div>
-          <div>
-            <label>Address:</label>
-            <input type="text" name="address" placeholder="Address" disabled={disabled} />
-          </div>
-          <div>
-            <label>City:</label>
-            <input type="text" name="city" placeholder="City" disabled={disabled} />
-          </div>
-          <div>
-            <label>Post Code:</label>
-            <input type="text" name="post" placeholder="Post Code" disabled={disabled} />
-          </div>
-          <div>
-            <label>Country:</label>
-            <input type="text" name="country" placeholder="Country" disabled={disabled} />
-          </div>
-          {disabled ? (
-            <button type="submit" onClick={saveAddress}>
-              Edit
-            </button>
-          ) : (
-            <button type="submit" onClick={saveAddress}>
-              Save
-            </button>
-          )}
-        </form>
-      </div>
-
-      <div>
-        <h2>Make Payment</h2>
-        <StripeContainer />
+        </div>
       </div>
     </>
   );

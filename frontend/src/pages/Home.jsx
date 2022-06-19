@@ -16,9 +16,9 @@ function Home() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:mt-4">
       {loading ? (
-        <h2>Loading...</h2>
+        <h2 className="text-2xl font-bold">Loading...</h2>
       ) : error ? (
         <h2>{error}</h2>
       ) : (
