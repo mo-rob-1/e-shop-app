@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart renders the cart page 1`] = `
+<DocumentFragment>
+  <div
+    class="checkout-container"
+  >
+    <div>
+      <h2
+        class="mb-10 font-bold text-2xl"
+      >
+        Shopping Cart
+      </h2>
+      <div
+        class="grid gap-5"
+      >
+        <h2
+          class="text-xl font-bold"
+          data-testid="cart-empty-text"
+        >
+          Your Cart Is Empty 
+          <a
+            class="underline"
+            href="/"
+          >
+            Go Back
+          </a>
+        </h2>
+      </div>
+    </div>
+    <div>
+      <div
+        class="shadow p-6 lg:p-10 rounded-xl mt-8"
+      >
+        <p
+          class="font-semibold mb-3"
+          data-testid="subtotal-title-text"
+        >
+          Subtotal (0) items
+        </p>
+        <p
+          class="font-bold text-2xl mb-3"
+          data-testid="subtotal-price-text"
+        >
+          £0.00
+        </p>
+        <div>
+          <a
+            class="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
+            data-testid="checkout-button"
+            href="/checkout"
+          >
+            Proceed To Checkout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

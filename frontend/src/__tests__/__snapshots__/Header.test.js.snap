@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders the header 1`] = `
+<DocumentFragment>
+  <header
+    class="flex justify-between items-center pt-10 pb-10"
+  >
+    <div>
+      <div>
+        <a
+          href="/"
+        >
+          e-Shop
+        </a>
+      </div>
+    </div>
+    <ul
+      class="flex justify-between items-center"
+    >
+       
+      <li
+        class="mr-5"
+      >
+        <a
+          href="/login"
+        >
+          Login
+        </a>
+      </li>
+      <li>
+        <a
+          href="/register"
+        >
+          Register
+        </a>
+      </li>
+    </ul>
+  </header>
+</DocumentFragment>
+`;

@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkout renders the checkout page 1`] = `
+<DocumentFragment>
+  <h1
+    class="md:mb-10 font-bold text-2xl"
+  >
+    Checkout
+  </h1>
+  <div
+    class="checkout-container"
+  >
+    <div>
+      <h2
+        class="font-bold text-lg"
+      >
+        Your Order
+      </h2>
+      <div
+        class="grid gap-6 mt-8"
+      />
+    </div>
+    <div>
+      <form
+        class="shadow rounded-2xl p-6 mt-8 mb-8"
+        data-testid="shipping-address-form"
+      >
+        <h2
+          class="font-bold mb-6 mt-2 text-lg"
+        >
+          Shipping Address
+        </h2>
+        <div
+          class="mb-4"
+          data-testid="name-form-group"
+        >
+          <label
+            class="font-semibold"
+            data-testid="name-label"
+          >
+            Name:
+          </label>
+          <br />
+          <input
+            class="border w-full p-2 mt-1"
+            data-testid="name-input"
+            name="name"
+            type="text"
+          />
+        </div>
+        <div
+          class="mb-4"
+          data-testid="address-form-group"
+        >
+          <label
+            class="font-semibold"
+            data-testid="address-label"
+          >
+            Address:
+          </label>
+           
+          <br />
+          <input
+            class="border w-full p-2 mt-1"
+            data-testid="address-input"
+            name="address"
+            type="text"
+          />
+        </div>
+        <div
+          class="mb-4"
+          data-testid="city-form-group"
+        >
+          <label
+            class="font-semibold"
+            data-testid="city-label"
+          >
+            City:
+          </label>
+           
+          <br />
+          <input
+            class="border w-full p-2 mt-1"
+            data-testid="city-input"
+            name="city"
+            type="text"
+          />
+        </div>
+        <div
+          class="mb-4"
+          data-testid="post-code-form-group"
+        >
+          <label
+            class="font-semibold"
+            data-testid="post-code-label"
+          >
+            Post Code:
+          </label>
+           
+          <br />
+          <input
+            class="border w-full p-2 mt-1"
+            data-testid="post-code-input"
+            name="post"
+            type="text"
+          />
+        </div>
+        <div
+          class="mb-5"
+          data-testid="country-form-group"
+        >
+          <label
+            class="font-semibold"
+            data-testid="country-label"
+          >
+            Country:
+          </label>
+           
+          <br />
+          <input
+            class="border w-full p-2 mt-1"
+            data-testid="country-input"
+            name="country"
+            type="text"
+          />
+        </div>
+        <div
+          data-testid="form-button"
+        >
+          <button
+            class="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+      <div
+        class="shadow rounded-2xl p-6"
+        data-testid="make-payment-form"
+      >
+        <h2
+          class="font-bold mb-6 mt-2 text-lg"
+        >
+          Make Payment
+        </h2>
+        <form>
+          <fieldset>
+            <div
+              class="mb-5"
+            >
+              <div />
+            </div>
+          </fieldset>
+          <button
+            class="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
+          >
+            Pay
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

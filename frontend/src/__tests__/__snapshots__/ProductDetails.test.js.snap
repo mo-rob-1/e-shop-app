@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDetails renders the product details page 1`] = `
+<DocumentFragment>
+  <div>
+     
+    <div
+      class="md:grid md:grid-cols-2 md:gap-10 md:mt-10"
+    >
+      <div>
+        <img
+          data-testid="product-details-image"
+        />
+      </div>
+      <div
+        class="mt-6 md:mt-0"
+      >
+        <div>
+          <div>
+            <h2
+              class="text-3xl font-bold"
+              data-testid="product-details-name"
+            />
+            <p
+              class="mt-4 mb-4 font-bold text-2xl"
+              data-testid="product-details-price"
+            >
+              £
+            </p>
+            <p
+              data-testid="product-details-desc"
+            />
+          </div>
+        </div>
+        <div>
+          <div
+            class="mt-4 grid gap-4"
+          >
+            <div>
+              <span
+                class="font-bold mr-2"
+                data-testid="product-details-status"
+              >
+                Status:
+              </span>
+              <span>
+                Out of Stock
+              </span>
+            </div>
+            <div
+              data-testid="product-details-quantity-selector"
+            >
+              <span
+                class="font-bold mr-2"
+                data-testid="product-details-quantity"
+              >
+                Quantity:
+              </span>
+              <select
+                class="border"
+              >
+                <option
+                  value="1"
+                >
+                  1
+                </option>
+              </select>
+            </div>
+            <button
+              class="bg-slate-800 text-white text-center pt-3 pb-3 font-semibold mt-3"
+              data-testid="product-details-add-to-cart-button"
+              type="button"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

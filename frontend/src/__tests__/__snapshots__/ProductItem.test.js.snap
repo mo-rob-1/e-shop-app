@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductItem renders the product item 1`] = `
+<DocumentFragment>
+  <div
+    class="shadow-md rounded-bl-xl rounded-br-xl"
+  >
+    <img
+      class="rounded-tr-xl rounded-tl-xl w-full h-80 object-cover"
+      data-testid="product-item-image"
+      height="300px"
+    />
+    <div
+      class="pl-6 pr-6 pt-8 pb-8"
+    >
+      <h2
+        class="font-bold text-lg mb-4"
+        data-testid="product-item-name"
+      />
+      <p
+        class="mb-3"
+        data-testid="product-item-desc"
+      >
+        ...
+      </p>
+      <p
+        class="mb-3 font-bold text-2xl"
+        data-testid="product-item-price"
+      >
+        $
+      </p>
+      <a
+        class="bg-slate-800 text-white font-bold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
+        data-testid="product-item-view-link"
+        href="/product/undefined"
+      >
+        View
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
