@@ -35,7 +35,7 @@ function Cart() {
 
           <div className="grid gap-5">
             {cartItems.length === 0 ? (
-              <h2 className="text-xl font-bold">
+              <h2 className="text-xl font-bold" data-testid="cart-empty-text">
                 Your Cart Is Empty{" "}
                 <Link className="underline" to="/">
                   Go Back
@@ -56,12 +56,17 @@ function Cart() {
 
         <div>
           <div className="shadow p-6 lg:p-10 rounded-xl mt-8">
-            <p className="font-semibold mb-3">Subtotal ({getCartCount()}) items</p>
-            <p className="font-bold text-2xl mb-3">£{getCartSubTotal()}</p>
+            <p className="font-semibold mb-3" data-testid="subtotal-title-text">
+              Subtotal ({getCartCount()}) items
+            </p>
+            <p className="font-bold text-2xl mb-3" data-testid="subtotal-price-text">
+              £{getCartSubTotal()}
+            </p>
             <div>
               <Link
                 to="/checkout"
-                className="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
+                className="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md w-full text-center"
+                data-testid="checkout-button"
               >
                 Proceed To Checkout
               </Link>

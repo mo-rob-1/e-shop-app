@@ -47,49 +47,96 @@ function Checkout() {
         </div>
 
         <div>
-          <form className="shadow rounded-2xl p-6 mt-8 mb-8">
+          <form className="shadow rounded-2xl p-6 mt-8 mb-8" data-testid="shipping-address-form">
             <h2 className="font-bold mb-6 mt-2 text-lg">Shipping Address</h2>
-            <div className="mb-4">
-              <label className="font-semibold">Name:</label>
+            <div className="mb-4" data-testid="name-form-group">
+              <label className="font-semibold" data-testid="name-label">
+                Name:
+              </label>
               <br></br>
-              <input type="text" name="name" disabled={disabled} className="border w-full p-2 mt-1" />
+              <input
+                type="text"
+                name="name"
+                disabled={disabled}
+                className="border w-full p-2 mt-1"
+                data-testid="name-input"
+              />
             </div>
-            <div className="mb-4">
-              <label className="font-semibold">Address:</label> <br></br>
-              <input type="text" name="address" disabled={disabled} className="border w-full p-2 mt-1" />
+            <div className="mb-4" data-testid="address-form-group">
+              <label className="font-semibold" data-testid="address-label">
+                Address:
+              </label>{" "}
+              <br></br>
+              <input
+                type="text"
+                name="address"
+                disabled={disabled}
+                className="border w-full p-2 mt-1"
+                data-testid="address-input"
+              />
             </div>
-            <div className="mb-4">
-              <label className="font-semibold">City:</label> <br></br>
-              <input type="text" name="city" disabled={disabled} className="border w-full p-2 mt-1" />
+            <div className="mb-4" data-testid="city-form-group">
+              <label className="font-semibold" data-testid="city-label">
+                City:
+              </label>{" "}
+              <br></br>
+              <input
+                type="text"
+                name="city"
+                disabled={disabled}
+                className="border w-full p-2 mt-1"
+                data-testid="city-input"
+              />
             </div>
-            <div className="mb-4">
-              <label className="font-semibold">Post Code:</label> <br></br>
-              <input type="text" name="post" disabled={disabled} className="border w-full p-2 mt-1" />
+            <div className="mb-4" data-testid="post-code-form-group">
+              <label className="font-semibold" data-testid="post-code-label">
+                Post Code:
+              </label>{" "}
+              <br></br>
+              <input
+                type="text"
+                name="post"
+                disabled={disabled}
+                className="border w-full p-2 mt-1"
+                data-testid="post-code-input"
+              />
             </div>
-            <div className="mb-5">
-              <label className="font-semibold">Country:</label> <br></br>
-              <input type="text" name="country" disabled={disabled} className="border w-full p-2 mt-1" />
+            <div className="mb-5" data-testid="country-form-group">
+              <label className="font-semibold" data-testid="country-label">
+                Country:
+              </label>{" "}
+              <br></br>
+              <input
+                type="text"
+                name="country"
+                disabled={disabled}
+                className="border w-full p-2 mt-1"
+                data-testid="country-input"
+              />
             </div>
-            {disabled ? (
-              <button
-                type="submit"
-                onClick={saveAddress}
-                className="bg-black text-white font-bold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
-              >
-                Edit
-              </button>
-            ) : (
-              <button
-                type="submit"
-                onClick={saveAddress}
-                className="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md"
-              >
-                Save
-              </button>
-            )}
+
+            <div data-testid="form-button">
+              {disabled ? (
+                <button
+                  type="submit"
+                  onClick={saveAddress}
+                  className="bg-black text-white font-bold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md w-full"
+                >
+                  Edit
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  onClick={saveAddress}
+                  className="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md w-full"
+                >
+                  Save
+                </button>
+              )}
+            </div>
           </form>
 
-          <div className="shadow rounded-2xl p-6">
+          <div className="shadow rounded-2xl p-6" data-testid="make-payment-form">
             <h2 className="font-bold mb-6 mt-2 text-lg">Make Payment</h2>
             <StripeContainer />
           </div>

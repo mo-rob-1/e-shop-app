@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../redux/features/auth/authSlice";
+import { FiShoppingCart } from "react-icons/fi";
 
 function Header() {
   const navigate = useNavigate();
@@ -27,20 +28,19 @@ function Header() {
     <header className="flex justify-between items-center pt-10 pb-10">
       <div>
         <div>
-          <Link to="/">e-Shop</Link>
+          <Link className="font-semibold" to="/">
+            e-Shop
+          </Link>
         </div>
       </div>
-      <ul className="flex justify-between items-center">
+      <ul className="flex justify-between items-center font-semibold">
         {user ? (
           <>
-            <li className="mr-5">Hi {user.name}</li>
+            <li className="mr-7">Hi {user.name}</li>
 
-            <li className="mr-5">
+            <li className="mr-7">
               <Link to="/cart">
-                <i className="fas fa-shopping-cart"></i>
-                <span>
-                  Cart <span>{getCartCount()}</span>
-                </span>
+                <span>Cart {getCartCount() > 0 ? `- (${getCartCount()})` : ""}</span>
               </Link>
             </li>
             <li>
@@ -50,7 +50,7 @@ function Header() {
         ) : (
           <>
             {" "}
-            <li className="mr-5">
+            <li className="mr-8">
               <Link to="/login">Login</Link>
             </li>
             <li>

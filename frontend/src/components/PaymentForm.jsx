@@ -43,7 +43,7 @@ function PaymentForm() {
               <CardElement />
             </div>
           </fieldset>
-          <button className="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md">
+          <button className="bg-slate-800 text-white font-semibold inline-block pl-10 pr-10 pt-4 pb-4 mt-2 text-sm rounded-md w-full">
             Pay
           </button>
         </form>
