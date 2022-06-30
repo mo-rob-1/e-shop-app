@@ -31,7 +31,7 @@ Users can:
 - React
 - React Hooks, React Router, React Testing Library
 - Redux
-- Stripe
+- Stripe API
 - Axios
 - MongoDB
 - Node.js and NPM
