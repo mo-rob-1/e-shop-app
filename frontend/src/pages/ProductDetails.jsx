@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
 
 // Actions
 import { getProductsDetails } from "../redux/actions/productActions";
@@ -38,7 +40,16 @@ function ProductDetails() {
         <h2>{error}</h2>
       ) : (
         <>
-          <div className="md:grid md:grid-cols-2 md:gap-10 md:mt-10">
+          <div className="md:mt-8">
+            <Link to="/">
+              <span className="inline-flex font-semibold items-center shadow pl-5 pr-5 pt-2 pb-2 rounded">
+                {" "}
+                <BsArrowLeft className="mr-2" />
+                Back
+              </span>
+            </Link>
+          </div>
+          <div className="mt-8 md:grid md:grid-cols-2 md:gap-10 md:mt-10">
             <div>
               <img src={product.imageUrl} alt={product.name} data-testid="product-details-image" />
             </div>

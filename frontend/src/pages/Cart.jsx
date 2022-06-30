@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "../components/CartItem";
 import { addToCart, removeFromCart } from "../redux/actions/cartActions";
+import { BsArrowLeft } from "react-icons/bs";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -29,7 +30,16 @@ function Cart() {
   };
   return (
     <>
-      <div className="checkout-container">
+      <div className="md:mt-8">
+        <Link to="/">
+          <span className="inline-flex font-semibold items-center shadow pl-5 pr-5 pt-2 pb-2 rounded">
+            {" "}
+            <BsArrowLeft className="mr-2" />
+            Back
+          </span>
+        </Link>
+      </div>
+      <div className="checkout-container mt-8">
         <div>
           <h2 className="mb-10 font-bold text-2xl">Shopping Cart</h2>
 

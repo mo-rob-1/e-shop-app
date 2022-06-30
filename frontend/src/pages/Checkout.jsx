@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import StripeContainer from "../components/StripeContainer";
+import { Link } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
 
 function Checkout() {
   const [disabled, setDisabled] = useState(false);
@@ -15,7 +17,16 @@ function Checkout() {
 
   return (
     <>
-      <h1 className="md:mb-10 font-bold text-2xl">Checkout</h1>
+      <div className="mb-8 md:mt-8">
+        <Link to="/cart">
+          <span className="inline-flex font-semibold items-center shadow pl-5 pr-5 pt-2 pb-2 rounded">
+            {" "}
+            <BsArrowLeft className="mr-2" />
+            Back
+          </span>
+        </Link>
+      </div>
+      <h1 className="md:mb-10 font-bold text-2xl mb-5">Checkout</h1>
 
       <div className="checkout-container">
         <div>
