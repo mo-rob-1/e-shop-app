@@ -32,7 +32,7 @@ function ProductDetails() {
   };
 
   return (
-    <div className="h-screen">
+    <div>
       {" "}
       {loading ? (
         <h2 className="text-2xl font-bold">Loading...</h2>
