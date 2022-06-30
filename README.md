@@ -12,8 +12,6 @@ Users can:
 - Create an account or login (Credentials stored in MongoDB)
 - Make a payment (Stripe Test Payment)
 
-![GIF showing the e-Shop Site](frontend/src/images/e-shop.gif)
-
 ## Table of contents
 
 - [Screenshots](#screenshots)
